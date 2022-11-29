@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    position: relative;
+    background: url('./assets/bg.png') center / 100% 100%;
+}
+
+.spinner{
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border : 1rem dotted rgb(248, 248, 12, 0.833);
+    box-shadow: 0px 0px 15px rgb(248, 248, 12, 0.833);
+    transition: transform 5s ease;
+    z-index: 10;
+}
+
+.tri{
+    width: 12rem;
+    height: 50%;
+    clip-path: polygon(100% 0%, 50% 100%, 0 0);
+    transform-origin: bottom;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left : 28.6%;
+    transform: translate(-50%);
+    font-size: 2.5rem;
+    font-family: cursive;
+    font-weight: 700;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 45px inset rgba(0, 0, 0, .8);
+
+}
+
+
+.container .one{
+    left : 50%;
+    background-color: rgb(255, 101, 101);
+}
+
+.two{
+    transform: rotate(45deg);
+    background-color: coral;
+
+}
+.three{
+    transform: rotate(90deg);
+    background-color: rgba(245, 245, 55, 0.936);
+}
+.four{
+    transform: rotate(135deg);
+    background-color: rgb(70, 230, 70);
+
+}
+.five{
+    transform: rotate(180deg);
+    background-color: aqua;
+
+}
+.six{
+    transform: rotate(225deg);
+    background-color: lightgreen;
+}
+
+.seven{
+    transform: rotate(270deg);
+    background-color: violet;
+
+}
+
+.eight{
+    transform: rotate(315deg);
+    background-color: pink;
+
+}
+
+.inner-circle{
+    width : 4rem;
+    height : 4rem;
+    position: absolute;
+    background-color: black;
+    inset: 50% 50%;
+    translate: -50% -50%;
+    z-index: 10;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.inner-circle::after{
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: gold;
+    z-index: 100;
+    position: absolute;
+    rotate: 180deg;
+    inset : 25% 0 0 25%;
+}
+
+.arrow {
+    position: absolute;
+    top : 1.5%;
+    left : 25%;
+    transform: rotate(180deg);
+    width: 10rem;
+    z-index: 99;
+}
+
+.drop {
+    display: inline-block;
+    background: gold;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 1px -5px 20px rgba(0, 0, 0, .8);
+  }
+
+  .drop:before {
+    content: "";
+    position: absolute;
+    top: -85%;
+    left: 50%;
+    border: 20px solid transparent;
+    border-bottom: 31px solid gold;
+    transform: translateX(-50%);
+  }
+
+.drop.small {
+    display: inline-block;
+    background: rgb(224, 62, 232);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    position: relative;
+    left : -28%;
+    box-shadow: 1px -5px 20px rgba(0, 0, 0, .8);
+  }
+
+  .drop.small:before {
+    content: "";
+    position: absolute;
+    top: -78%;
+    left: 50%;
+    border: 14px solid transparent;
+    border-bottom: 18.9px solid rgb(224, 62, 232);
+    transform: translateX(-50%);
+  }
+
+  .spinner-border{
+    width : 32rem;
+    height : 32rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+
+  .bulbs{
+    position: absolute;
+    width : 30rem;
+    height : 30rem;
+    border-radius: 50%;
+    background-color: rgb(238, 168, 229);
+    box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe;
+    display: grid;
+    place-items: center;
+    /* z-index: 10; */
+
+  }
+
+
+  .bulbs .circle{
+  position: absolute;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: rgba(255, 217, 0, 0.9);
+    border-radius: 50%;
+     transform-origin: center;
+    z-index: 50;
+    cursor: pointer;
+  }
+
+
+  .glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
+  .joker{
+    width: 30rem;
+    text-align: center;
+    margin-top: 3.5rem;
+    position: relative;
+    animation : upanddown 3s infinite;
+  }
+
+  @keyframes upanddown {
+    0%{
+      transform: translateY(0);
+    }
+    50%{
+      transform: translateY(1rem);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+  .joker img{
+    height : 40rem;
+    filter: drop-shadow(5px 5px 10px #222);
+  }
+
+  .joker .comments{
+    position: absolute;
+    top : 0;
+    width : 13rem;
+    background-color: aliceblue;
+    padding: .6rem;
+    border-radius: 20% 40% 3% ;
+  }
+
+  .joker .comments::after{
+      content: '';
+      width : 2rem;
+      height : 2rem;
+      position: absolute;
+      background-color: aliceblue;
+      border-radius: 50%;
+      right : -2.2rem;
+      bottom : -1.5rem;
+  }
+
+  .joker .message::after{
+      content: '';
+      width : 1rem;
+      height : 1rem;
+      position: absolute;
+      background-color: aliceblue;
+      border-radius: 50%;
+      right : -3.5rem;
+      bottom : -2.5rem;
+  }
+  .stand{
+    position: absolute;
+    top: 102%; 
+    left: 50%; 
+    transform: translate(-50%);
+    z-index: 1;
+  }
+
+  .stand .vert{
+    position: absolute;
+    left : 50%;
+    top : -50%;
+    transform: translate(-50%);
+    width : 50px;
+    height : 90px;
+    background-color: brown;
+    background : url('./assets/3007.jpg') center/cover;
+    filter: brightness(.7);
+    z-index: -1;
+    box-shadow: 0px 0px 65px rgba(0, 0, 0, .8);
+  }
+
+  .stand .round{
+    background-color: brown;       
+    height: 80px; 
+    width: 250px; 
+    border-radius: 100px 100px 0 0; 
+    background : url('./assets/3007.jpg') center/cover;
+    filter: brightness(.8);
+  }
+
+  .stand .rect{
+    width : 250px;
+    height : 20px;
+    background-color: brown;
+    background : url('./assets/wood.jpg') center/cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .8);
+  }
+
+  @media (max-width : 1124px) {
+    .container {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    .joker{
+      width: 15rem;
+      height: 12rem;
+      align-self: center;
+      z-index: 99;
+    }
+
+    .joker img{
+      margin-top: 1.2rem;
+      margin-left : 6rem;
+      height : 15rem;
+    }
+
+    .spinner{
+      width: 20rem;
+      height: 20rem;
+    }
+
+    .tri{
+      width: 8rem;
+      font-size: 1.5rem;
+    }
+    
+    .arrow{
+      top : 0%;
+      left : 9%;
+    }
+
+    .drop{
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .drop:before{
+      border: 13.3px solid transparent;
+      border-bottom: 20px solid gold;
+    }
+
+    .drop.small{
+      width: 1.2rem;
+      height: 1.2rem;
+      left: -19%;
+    }
+
+    .drop.small::before{
+      border: 8px solid transparent;
+      border-bottom: 10px solid rgb(224, 62, 232);
+    }
+
+    .spinner-border{
+      width: 21rem;
+      height: 21rem;
+    }
+
+    .bulbs{
+      width: 20rem;
+      height: 20rem;
+    }
+
+
+    .stand .vert{
+      width : 2rem;
+      height: 5rem;
+    }
+
+    .stand .round{
+      width: 10rem;
+      height: 3rem;
+      border-radius: 80px 80px 0 0; 
+    }
+
+    .stand .rect{
+      width: 10rem;
+    }
+
+    .joker .comments{
+      position: absolute;
+      top : -2rem;
+      left : -5rem;
+    }
+  
+    .joker .comments::after{
+        content: '';
+        width : 2rem;
+        height : 2rem;
+        position: absolute;
+        background-color: aliceblue;
+        border-radius: 50%;
+        right : -2.2rem;
+        bottom : -1.5rem;
+    }
+  
+    .joker .message::after{
+        content: '';
+        width : 1rem;
+        height : 1rem;
+        position: absolute;
+        background-color: aliceblue;
+        border-radius: 50%;
+        right : -3.5rem;
+        bottom : -2.5rem;
+    }
+  }

@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.game-quiz-container{
+    width: 25rem;
+    height: 30rem;
+    background-color: rgb(224, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 2rem;
+    padding: 1rem 0;
+    position: absolute;
+    top : 50% ;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    z-index : 99;
+}
+
+.game-details-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap : .5rem;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.game-details-container h1{
+    font-size: 1.2rem;
+}
+
+.game-details-container img{
+    width : 3rem;
+}
+
+.game-details-container .scores{
+    display: flex;
+    /* gap : 1rem; */
+}
+.game-question-container{
+    padding: .5rem;
+    width: 80%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid salmon;
+    border-radius: 25px;
+}
+
+.game-question-container h1{
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.game-options-container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap : 1rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-options-container span{
+    width: 45%;
+    height: 3rem;
+    border: 2px solid salmon;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+span label{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-weight: 600;
+}
+
+span label:hover{
+    transform: scale(1.12);
+}
+
+input[type="radio"] {
+    /* position: relative; */
+    display: none;
+}
+
+
+input[type=radio]:checked ~ .option {
+    background-color: aliceblue;
+    
+}
+
+.next-button-container{
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.next-button-container button{
+    width: 8rem;
+    border-radius: 10px;
+    padding: .2rem;
+    background: none;
+    color: rgb(25, 25, 25);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid salmon;
+    cursor: pointer;
+    outline: none;
+}
+.next-button-container button:hover{
+    background-color: rgba(209, 196, 196, 0.233);
+}
+
+.modal-container{
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    animation: fadeIn .3s ease-in-out;
+    position: absolute;
+    z-index: 999;
+}
+
+.modal-content-container{
+    height: 30rem;
+    width: 25rem;
+    background-color: rgb(43, 42, 42);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 25px;
+}
+
+.modal-content-container h1{
+    font-size: 1.3rem;
+    height: 3rem;
+    color: lightgray;
+    text-align: center;
+}
+
+.grade-details{
+    width: 15rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.grade-details p{
+    color: white;
+    text-align: center;
+}
+
+.grade-details img{
+    width : 5rem;
+    text-align: center;
+}
+
+.modal-button-container{
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-button-container button{
+    width: 10rem;
+    height: 2rem;
+    background: none;
+    outline: none;
+    border: 1px solid rgb(252, 242, 241);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.modal-button-container button:hover{
+    background-color: grey;
+}
+
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
